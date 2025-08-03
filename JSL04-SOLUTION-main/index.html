@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+   <script defer src="./scripts.js" type="module"></script>
+  <title>Kanban</title>
+</head>
+
+<body>
+  <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
+  <nav class="side-bar">
+    <div>
+      <img src="assets/logo-light.svg" alt="logo" />
+      <h4>ALL BOARDS (1)</h4>
+      <button>Launch Career</button>
+    </div>
+  </nav>
+
+  <div>
+    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
+    <header class="main-header">
+      <img src="assets/favicon.svg" alt="favicon" />
+      <h2>Launch Career</h2>
+      <button id="mobileAddTaskButton" class="mobile-add-task"><span>+</span></button>
+      <button id="addTaskButton" class="desktop-add-task"> <span>+ Add Task</span></button>
+    </header>
+
+    <!-- Edit Task Modal -->
+    <section id="editTaskModal" class="modal">
+      <article class="modal-content">
+        <div class="modal-content-header">
+          <h2>Edit Task</h2>
+          <button class="close" id="closeEditModal">&times;</button>
+        </div>
+        <form class="modal-content-form">
+          <div class="form-diveders">
+            <label for="editTitle">Title</label>
+            <input class="input-field" type="text" id="editTitle" />
+          </div>
+
+          <div class="form-diveders">
+            <label for="editDescription">Description</label>
+            <textarea class="Description-field" id="editDescription"></textarea>
+          </div>
+
+          <div class="form-diveders">
+            <label for="editStatus">Status</label>
+            <select class="input-field" id="editStatus">
+              <option value="todo">To Do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+          <div class="form-btn">
+            <button class="save-btn" id="saveEdit">Save Changes</button>
+            <button class="delete-btn" id="deleteTask">Delete Task</button>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <!-- Add Task Modal -->
+    <section id="addTaskModal" class="modal">
+      <article class="modal-content">
+        <div class="modal-content-header">
+          <h2>Add New Task</h2>
+          <button class="close" id="closeAddModal">&times;</button>
+        </div>
+        <form class="modal-content-form">
+          <div class="form-diveders">
+            <label for="newTitle">Title</label>
+            <input class="input-field" type="text" id="newTitle" />
+          </div>
+
+          <div class="form-diveders">
+            <label for="newDescription">Description</label>
+            <textarea class="Description-field" id="newDescription"></textarea>
+          </div>
+
+          <div class="form-diveders">
+            <label for="newStatus">Status</label>
+            <select class="input-field" id="newStatus">
+              <option value="todo">To Do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+          <div class="form-btn">
+            <button class="save-btn" id="saveNewTask">Save Changes</button>
+            <button class="delete-btn" id="deleteTask">Delete Task</button>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <main class="cards-container">
+      <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
+      <section class="cards" data-status="todo">
+        <div class="task-heading">
+          <span class="todo-clr"></span>
+          <h4>TODO (5)</h4>
+        </div>
+        <!-- Tasks container for TODO -->
+        <ul class="task-list">
+          <li class="task-card"></li>
+        </ul>
+      </section>
+
+      <!-- DOING Column -->
+      <section class="cards" data-status="doing">
+        <div class="task-heading">
+          <span class="doing-clr"></span>
+          <h4>DOING (3)</h4>
+        </div>
+        <!-- Tasks container for DOING -->
+        <ul class="task-list">
+          <li class="task-card"></li>
+        </ul>
+      </section>
+
+      <!-- DONE Column -->
+      <section class="cards" data-status="done">
+        <div class="task-heading">
+          <span class="done-clr"></span>
+          <h4>DONE (4)</h4>
+        </div>
+        <!-- Tasks container for DONE -->
+        <ul class="task-list">
+          <li class="task-card"></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
