@@ -1,4 +1,8 @@
-export const initialTasks = [
+/**
+ * Initial set of tasks.
+ * @type {Array<Object>}
+ */
+const initialTasks = [
   {
     id: 1,
     title: "Launch Epic Career 🚀",
@@ -17,7 +21,6 @@ export const initialTasks = [
     description: "You're almost there",
     status: "doing",
   },
-
   {
     id: 4,
     title: "Learn Data Structures and Algorithms 📚",
