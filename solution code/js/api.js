@@ -10,7 +10,7 @@ export async function fetchTasksFromAPI() {
         if (!Response.ok) {
             throw new Error("Network response was not ok");
         }
-        const data = await ressponse.json();
+        const data = await response.json();
         return data; //Return the fetched data
     } catch (error) {
         console.error("Error fetching tasks:", error);
