@@ -49,7 +49,7 @@ body {
 /* the container for the modals */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: var(--secondary-clr);
   margin: 15% auto; 
   padding: 20px;
   border-radius: 10px;
@@ -68,7 +68,7 @@ body {
   color: var(--primary-clr);
 }
 .close { /* button for closing the modals */
-  position: absolute;
+  position: absolute;  
   top: 11px;
   right: 39px; 
   width: 3px;
@@ -167,7 +167,8 @@ margin-top: 18px;
   font-size: 18px;
   font-weight: 700;
 }
-/* styles for the add task button on mobile */
+
+/* styles for the add tasks button on the mobile */
 .mobile-add-task {
   font-size: 24px;
   background-color: var(--accent-clr);
@@ -195,8 +196,7 @@ margin-top: 18px;
   box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
 }
 
-
-/* hides the desktop add button on mobile */
+/* hides the desktop add task button on the mobile screen */
 .desktop-add-task {
   display: none; /* Show on larger screens */
 }
@@ -281,11 +281,11 @@ margin-top: 18px;
   margin-left: 27px;
   padding: 0px 12px 0px 10px;
 }
-.mobileSidebar-btn button {
+.mobileSidebar-btn button{
   width: 250px;
   height: 48px;
   position: absolute;
-  left: 1px;
+  left: -1px;
   border-radius: 0 30px 30px 0;
   border: none;
   background-color: var(--accent-clr);
@@ -322,27 +322,27 @@ margin-top: 18px;
 .theme-toggle-container input[type="checkbox"]:checked {
   background: var(--accent-clr);
 }
-.theme-toggle-container input[type="checkbox"]:before {
+.theme-toggle-container input[type="checkbox"]::before {
   content: "";
   position: absolute;
+  top: 2px;
+  left: 2px;
   width: 16px;
   height: 16px;
-  left: 2px;
-  top: 2px;
   background: var(--secondary-clr);
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
-.theme-toggle-container input[type="checkbox"]:checked:before {
+.theme-toggle-container input[type="checkbox"]:checked::before {
   transform: translateX(20px);
 }
 
 /* Add styles for priority circles */
 .priority-circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
   display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   margin-right: 8px;
 }
 /* styles to show the color of the priority */
@@ -357,9 +357,9 @@ margin-top: 18px;
 }
 
 /* Style for the button to show the hidden sidebar */
-.show-sidebar {
+.show-sidebar{
   display: none;
-  background-color: #a8a4ff;
+  background-color: #A8A4FF;
   width: 56px;
   height: 48px;
   font-size: 24px;
@@ -369,31 +369,31 @@ margin-top: 18px;
   bottom: 70px;
 }
 
-/* error message styles */
+/* error message styles*/
 .error-message {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
 
-/* styles for the notification modal */
+/* styles for the nofication modal */
 #notificationModal {
   display: none; /* Hidden by default */
   position: fixed;
-  z-index: 1000;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  z-index: 1000;
 }
 #notificationModal .modal-content {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
   background-color: var(--secondary-clr);
-  margin: 20% auto; 
+  margin: 20% auto;
   display: flex;
   align-items: center;
-  border-radius: 10px;
- justify-content: center;
-  width: 300px; 
-  height: 100px;
+  justify-content: center;
 }
 #notificationModal h2 {
   font-size: 16px;
@@ -434,19 +434,19 @@ margin-top: 18px;
 }
 /* Ensure sidebar is hidden on smaller screens */
 @media (max-width: 767px) {
-  .side-bar {
-    display: none!important;
-  }
+.side-bar {
+  display: none !important;
+}
 }
 
 /* media querys */
 @media (min-width: 768px) {
-  body {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
 
-  /* Shift the add task button when sidebar is hidden */
+/* Shift the add task button when sidebar is hidden */
 body.sidebar-hidden .desktop-add-task {
   transform: translateX(250px); /* Shift the button to the left */
 }
@@ -480,9 +480,9 @@ body.sidebar-hidden .main-header {
   display: none; /* Hide on larger screens */
 }
 
-/* styles on the tablet and desktop add tasks button */
+/* styles for the tablet and desktop add tasks button */
 .desktop-add-task {
-  display: block; /* Show on larger screens */
+  display: block; /* Show on larger screens */ 
   position: absolute;
   left: 400px;
   width: 100px;
@@ -497,12 +497,12 @@ body.sidebar-hidden .main-header {
   color: var(--secondary-clr);
   box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
 }
-.desktop-add-task span {
+.desktop-add-task span{
   color: var(--secondary-clr);
 }
 
-/* styles for modal content */
-.modal-content {
+/*styles for modal content  */
+.modal-content{
   margin-left: 290px;
   width: 400px;
 }
