@@ -14,14 +14,13 @@ export function initializeTheme() {
     }
 
     // Add event listener to toggle dark mode
-    themeToggle.addEventListener("change", function() {
-        if (this.checked) {
+  themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
             document.body.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
+      localStorage.setItem("theme", "dark"); // Save preference
         } else {
             document.body.classList.remove("dark-mode");
-            localStorage.setItem("theme", "light");
+      localStorage.setItem("theme", "light"); // Save preference
         }
     });
 }
-
