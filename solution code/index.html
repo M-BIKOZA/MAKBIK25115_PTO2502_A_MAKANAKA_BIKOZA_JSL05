@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-   <script defer src="./scripts.js" type="module"></script>
+  <script defer src="./scripts.js" type="module"></script>
   <title>Kanban</title>
 </head>
 
@@ -17,15 +17,15 @@
       <img src="assets/logo-light.svg" alt="logo" />
       <h2>ALL BOARDS (1)</h2>
       <button>Launch Career</button>
-      <div class="theme-toggle">
-        <span class="light-mode">🌞</span>
+      <div class="theme-toggle-container">
+        <span class="icon-sun">🌞</span>
         <input type="checkbox" id="themeToggle" />
-        <span class="dark-mode">🌜</span>
+        <span class="icon-moon">🌜</span>
       </div>
       <button id="hideSidebar" class="hide-sidebar">Hide Sidebar</button>
     </div>
   </nav>
-<div>
+  <div>
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
     <header class="main-header">
       <img src="assets/favicon.svg" alt="favicon" />
@@ -34,23 +34,23 @@
       <button id="addTaskButton" class="desktop-add-task"> <span>+ Add Task</span></button>
     </header>
 
-    <!-- Mobile Sidebar Modal-->
-     <section id="mobileSidebarModal" class="modal">
-       <article class="modal-content">
-         <div class="modal-content-header">
-           <h2>ALL BOARDS (1)</h2>
-           <button class="close" id="closeMobileSidebar">&times;</button>
-         </div>
-         <div class="mobileSidebar-btn">
+    <!-- Mobile Sidebar Modal -->
+    <section id="mobileSidebarModal" class="modal">
+      <article class="modal-content">
+        <div class="modal-content-header">
+          <h2>ALL BOARDS (1)</h2>
+          <button class="close" id="closeMobileSidebar">&times;</button>
+        </div>
+        <div class="mobileSidebar-btn">
           <button>Launch Career</button>
-          <div class="theme-toggle">
-            <span class="light-mode">🌞</span>
-            <input type="checkbox" id="themeToggle" />
-            <span class="dark-mode">🌜</span>
+          <div class="theme-toggle-container">
+            <span class="icon-sun">🌞</span>
+            <input type="checkbox" id="mobileThemeToggle" />
+            <span class="icon-moon">🌜</span>
           </div>
-          </div>
-       </article>
-       </section>
+        </div>
+      </article>
+    </section>
 
     <!-- Edit Task Modal -->
     <section id="editTaskModal" class="modal">
@@ -63,13 +63,13 @@
           <div class="form-diveders">
             <label for="editTitle">Title</label>
             <input class="input-field" type="text" id="editTitle" />
-            <span class="error-message" id="editTitleError"></span> <!-- Update Error message span-->
+            <span class="error-message" id="editTitleError"></span> <!-- Updated Error message span -->
           </div>
 
           <div class="form-diveders">
             <label for="editDescription">Description</label>
             <textarea class="Description-field" id="editDescription"></textarea>
-            <span class="error-message" id="editDescriptionError"></span> <!-- Update Error message span-->
+            <span class="error-message" id="editDescriptionError"></span> <!-- Updated Error message span -->
           </div>
 
           <div class="form-diveders">
@@ -81,18 +81,18 @@
             </select>
           </div>
 
-        <div class="form-diveders">
-          <label for="editPriority">Priority</label>
-          <select class="input-field" id="editPriority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div>
-        
+          <div class="form-diveders">
+            <label for="editPriority">Priority</label>
+            <select class="input-field" id="editPriority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
           <div class="form-btn">
-            <button class="save-btn" id="saveEdit">Save Changes</button>
-            <button class="delete-btn" id="deleteTask">Delete Task</button>
+            <button class="save-btn" id="saveEdit" type="button">Save Changes</button>
+            <button class="delete-btn" id="deleteTask" type="button">Delete Task</button>
           </div>
         </form>
       </article>
@@ -134,11 +134,11 @@
               <option value="medium">Medium</option>
               <option value="low">Low</option>
             </select>
-            </div>
+          </div>
 
           <div class="form-btn">
-            <button class="save-btn" id="saveNewTask">Save Changes</button>
-            <button class="delete-btn" id="deleteTask">Delete Task</button>
+            <button class="save-btn" id="saveNewTask" type="button">Save Changes</button>
+            <button class="delete-btn" id="deleteTask" type="button">Delete Task</button>
           </div>
         </form>
       </article>
@@ -148,7 +148,7 @@
     <section id="notificationModal" class="modal">
       <article class="modal-content">
         <div class="modal-content-header">
-          <h2 id="notificationMessage">Task added successfully!</h2>
+          <h2 id="notificationMessage">Task Added</h2>
         </div>
       </article>
     </section>
@@ -160,8 +160,8 @@
           <h2>Are you sure you want to delete this task?</h2>
         </div>
         <div class="form-btn confirmationModal-btn">
-          <button class="save-btn" id="confirmDelete">Yes</button>
-          <button class="delete-btn" id="cancelDelete">No</button>
+          <button type="button" class="save-btn" id="confirmDelete">Yes</button>
+          <button type="button" class="delete-btn" id="cancelDelete">No</button>
         </div>
       </article>
     </section>
@@ -175,7 +175,7 @@
         </div>
         <!-- Tasks container for TODO -->
         <ul class="task-list">
-          <li class="task-card"></li>
+          <!-- Task items will be dynamically added here -->
         </ul>
       </section>
 
@@ -183,11 +183,11 @@
       <section class="cards" data-status="doing">
         <div class="task-heading">
           <span class="doing-clr"></span>
-          <h4>DOING (3)</h4>
+          <h4>DOING (0)</h4>
         </div>
         <!-- Tasks container for DOING -->
         <ul class="task-list">
-          <li class="task-card"></li>
+          <!-- Task items will be dynamically added here -->
         </ul>
       </section>
 
@@ -199,7 +199,7 @@
         </div>
         <!-- Tasks container for DONE -->
         <ul class="task-list">
-          <!-- Task items will be dynamically generated here -->
+          <!-- Task items will be dynamically added here -->
         </ul>
       </section>
     </main>
