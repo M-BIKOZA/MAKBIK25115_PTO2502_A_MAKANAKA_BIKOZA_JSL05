@@ -13,12 +13,12 @@
   --third-clr: #828fa3;
   --accent-clr: #635fc7;
 }
-/* dark mode colors*/
+/* dark mode colors */
 body.dark-mode {
   --background-clr: #20212C; /* Dark mode background */
   --primary-clr: #fff; /* Dark mode primary color */
-  --secondary-clr: #2b2c37; /* Dark mode secondary background color */
-  --third-clr: #828fa3; /* Dark mode tertiary text color */
+  --secondary-clr: #2B2C37; /* Dark mode secondary color */
+  --third-clr: #828fa3; /* Dark mode third color */
   --accent-clr: #635fc7; /* Dark mode accent color */
 }
 body {
