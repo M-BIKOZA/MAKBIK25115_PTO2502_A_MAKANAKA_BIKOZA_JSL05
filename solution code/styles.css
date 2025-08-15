@@ -75,9 +75,9 @@ body {
   height: 18px;
   font-size: 28px;
   color: red;
-  font-weight: bold;
-  background-color: transparent; /* to change the background of the button */
   border: none;
+  font-weight: bold;
+  background-color: transparent; /* to change the backgorund of the button */
   cursor: pointer;
 }
 .close:hover,
