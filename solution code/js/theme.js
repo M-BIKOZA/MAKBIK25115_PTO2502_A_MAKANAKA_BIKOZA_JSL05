@@ -4,7 +4,7 @@
  * Initializes the theme based on user preferences.
  * Adds event listeners for theme toggling. 
 */
-export function InitializeTheme() {
+export function initializeTheme() {
     const themeToggle = document.getElementById("themeToggle");
     
     // Check for saved user preference in local storage
